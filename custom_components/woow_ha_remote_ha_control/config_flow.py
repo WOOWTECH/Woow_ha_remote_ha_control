@@ -1,4 +1,4 @@
-"""Config flow for Remote Home-Assistant integration."""
+"""Config flow for Woow HA Remote HA Control integration."""
 from __future__ import annotations
 import logging
 import enum
@@ -96,7 +96,7 @@ class InstanceType(enum.Enum):
 
 
 class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
-    """Handle a config flow for Remote Home-Assistant."""
+    """Handle a config flow for Woow HA Remote HA Control."""
 
     VERSION = 1
     CONNECTION_CLASS = config_entries.CONN_CLASS_LOCAL_PUSH
@@ -246,11 +246,10 @@ class ConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
 
 class OptionsFlowHandler(config_entries.OptionsFlow):
-    """Handle options flow for the Home Assistant remote integration."""
+    """Handle options flow for the Woow HA Remote HA Control integration."""
 
     def __init__(self):
-        """Initialize remote_homeassistant options flow."""
-        # self.config_entry wird von Home Assistant gesetzt (read-only Property)
+        """Initialize woow_ha_remote_ha_control options flow."""
         self.filters: list[Any] | None = None
         self.events: set[Any] | None = None
         self.options: dict[str, Any] | None = None

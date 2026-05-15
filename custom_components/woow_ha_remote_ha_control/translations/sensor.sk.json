@@ -1,6 +1,6 @@
 {
   "state": {
-    "remote_homeassistant___": {
+    "woow_ha_remote_ha_control___": {
       "disconnected": "Odpojené",
       "connecting": "Pripája sa",
       "connected": "Pripojené",

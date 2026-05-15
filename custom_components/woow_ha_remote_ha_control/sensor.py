@@ -1,4 +1,4 @@
-"""Sensor platform for connection status.."""
+"""Sensor platform for Woow HA Remote HA Control connection status."""
 from homeassistant.const import CONF_HOST, CONF_PORT, CONF_VERIFY_SSL
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.helpers.entity import DeviceInfo, Entity
@@ -14,10 +14,10 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
 
 
 class ConnectionStatusSensor(Entity):
-    """Representation of a remote_homeassistant sensor."""
+    """Representation of a woow_ha_remote_ha_control sensor."""
 
     def __init__(self, config_entry):
-        """Initialize the remote_homeassistant sensor."""
+        """Initialize the woow_ha_remote_ha_control sensor."""
         self._state = None
         self._entry = config_entry
 
@@ -61,7 +61,7 @@ class ConnectionStatusSensor(Entity):
             self._state = state
             self.schedule_update_ha_state()
 
-        signal = f"remote_homeassistant_{self._entry.unique_id}"
+        signal = f"woow_ha_remote_ha_control_{self._entry.unique_id}"
         self.async_on_remove(
             async_dispatcher_connect(self.hass, signal, _update_handler)
         )

@@ -9,8 +9,8 @@ ATTR_INSTALLATION_TYPE = "installation_type"
 class DiscoveryInfoView(HomeAssistantView):
     """Get all logged errors and warnings."""
 
-    url = "/api/remote_homeassistant/discovery"
-    name = "api:remote_homeassistant:discovery"
+    url = "/api/woow_ha_remote_ha_control/discovery"
+    name = "api:woow_ha_remote_ha_control:discovery"
 
     async def get(self, request):
         """Get discovery information."""

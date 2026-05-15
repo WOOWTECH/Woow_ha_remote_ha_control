@@ -1,4 +1,4 @@
-"""Constants used by integration."""
+"""Constants used by Woow HA Remote HA Control integration."""
 
 CONF_REMOTE_CONNECTION = "remote_connection"
 CONF_UNSUB_LISTENER = "unsub_listener"
@@ -25,7 +25,7 @@ CONF_EXCLUDE_ENTITIES = "exclude_entities"
 CONF_MAIN = "Add a remote node"
 CONF_REMOTE = "Setup as remote node"
 
-DOMAIN = "remote_homeassistant"
+DOMAIN = "woow_ha_remote_ha_control"
 
 REMOTE_ID = "remote"
 

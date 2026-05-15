@@ -1,8 +1,9 @@
 """
-Connect two Home Assistant instances via the Websocket API.
+Woow HA Remote HA Control - Connect two Home Assistant instances via the Websocket API.
 
-For more details about this component, please refer to the documentation at
-https://home-assistant.io/components/remote_homeassistant/
+Maintained by WOOWTECH. Forked from custom-components/remote_homeassistant.
+For more details, please refer to the documentation at
+https://github.com/WOOWTECH/Woow_ha_remote_ha_control
 """
 from __future__ import annotations
 import asyncio
@@ -43,7 +44,7 @@ from homeassistant.helpers.service import async_register_admin_service
 from homeassistant.helpers.typing import ConfigType
 from homeassistant.setup import async_setup_component
 
-from custom_components.remote_homeassistant.views import DiscoveryInfoView
+from custom_components.woow_ha_remote_ha_control.views import DiscoveryInfoView
 
 from .const import (CONF_EXCLUDE_DOMAINS, CONF_EXCLUDE_ENTITIES,
                     CONF_INCLUDE_DOMAINS, CONF_INCLUDE_ENTITIES,
@@ -202,7 +203,7 @@ async def setup_remote_instance(hass: HomeAssistant.core.HomeAssistant):
 
 
 async def async_setup(hass: HomeAssistant.core.HomeAssistant, config: ConfigType):
-    """Set up the remote_homeassistant component."""
+    """Set up the woow_ha_remote_ha_control component."""
     hass.data.setdefault(DOMAIN, {})
 
     async def _handle_reload(service):
@@ -243,7 +244,7 @@ async def async_setup(hass: HomeAssistant.core.HomeAssistant, config: ConfigType
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
-    """Set up Remote Home-Assistant from a config entry."""
+    """Set up Woow HA Remote HA Control from a config entry."""
     _async_import_options_from_yaml(hass, entry)
     if entry.unique_id == REMOTE_ID:
         hass.async_create_task(setup_remote_instance(hass))
@@ -388,7 +389,7 @@ class RemoteConnection:
  
     def set_connection_state(self, state):
         """Change current connection state."""
-        signal = f"remote_homeassistant_{self._entry.unique_id}"
+        signal = f"woow_ha_remote_ha_control_{self._entry.unique_id}"
         async_dispatcher_send(self._hass, signal, state)
 
     @callback
@@ -730,7 +731,7 @@ class RemoteConnection:
             entity_registry = er.async_get(self._hass)
             entity_registry.async_get_or_create(
                 domain=domain,
-                platform='remote_homeassistant',
+                platform='woow_ha_remote_ha_control',
                 unique_id=attr['unique_id'],
                 suggested_object_id=object_id,
             )
