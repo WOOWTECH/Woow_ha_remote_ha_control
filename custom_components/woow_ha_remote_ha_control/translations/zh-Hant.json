@@ -1,0 +1,81 @@
+{
+  "config": {
+    "flow_title": "遠端：{name}",
+    "step": {
+      "user": {
+        "title": "選擇安裝類型",
+        "description": "「遠端節點」是提供狀態資料的那一台實例；要在這台接收遠端狀態，請選「新增遠端節點」（Add a remote node）。",
+        "data": {
+          "type": "安裝類型"
+        }
+      },
+      "connection_details": {
+        "title": "連線資訊",
+        "data": {
+          "host": "主機",
+          "port": "連接埠",
+          "secure": "使用加密連線（HTTPS／WSS）",
+          "verify_ssl": "驗證 SSL 憑證",
+          "access_token": "存取權杖",
+          "max_message_size": "訊息大小上限"
+        }
+      }
+    },
+    "error": {
+      "api_problem": "伺服器回應異常",
+      "cannot_connect": "無法連線到伺服器",
+      "invalid_auth": "憑證無效",
+      "unsupported_version": "版本不支援，至少需要 0.111 版。",
+      "unknown": "發生未知錯誤",
+      "missing_endpoint": "請先在遠端主機安裝 Woow HA Remote HA Control，並在它的設定檔加入 woow_ha_remote_ha_control:。"
+    },
+    "abort": {
+      "already_configured": "已經設定過了"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "基本選項（步驟 1/4）",
+        "data": {
+          "entity_prefix": "實體 ID 前綴（選填）",
+          "entity_friendly_name_prefix": "實體名稱前綴（選填）",
+          "load_components": "載入元件（若尚未載入）",
+          "service_prefix": "服務前綴",
+          "services": "遠端服務"
+        }
+      },
+      "domain_entity_filters": {
+        "title": "網域與實體篩選（步驟 2/4）",
+        "data": {
+          "include_domains": "包含的網域",
+          "include_entities": "包含的實體",
+          "exclude_domains": "排除的網域",
+          "exclude_entities": "排除的實體"
+        }
+      },
+      "general_filters": {
+        "title": "篩選條件（步驟 3/4）",
+        "description": "要新增篩選條件，請填入「實體 ID」與一個以上的篩選屬性，再按「送出」。要移除既有條件，請在「篩選條件」取消勾選。\n\n「實體 ID」留空直接按「送出」，就不會再做任何變更。",
+        "data": {
+          "filter": "篩選條件",
+          "entity_id": "實體 ID",
+          "unit_of_measurement": "測量單位",
+          "above": "高於",
+          "below": "低於"
+        }
+      },
+      "events": {
+        "title": "訂閱的事件（步驟 4/4）",
+        "description": "要新增訂閱事件，請在「新增事件」輸入事件名稱，再按「送出」。要移除既有事件，請在「事件」取消勾選。\n\n「新增事件」留空直接按「送出」，就不會再做任何變更。",
+        "data": {
+          "subscribe_events": "事件",
+          "add_new_event": "新增事件"
+        }
+      }
+    },
+    "abort": {
+      "not_supported": "遠端節點沒有可設定的選項"
+    }
+  }
+}
