@@ -4,7 +4,10 @@
     "step": {
       "user": {
         "title": "Select installation type",
-        "description": "The remote node is the instance on which the states are gathered from"
+        "description": "The remote node is the instance on which the states are gathered from",
+        "data": {
+          "type": "Installation type"
+        }
       },
       "connection_details": {
         "title": "Connection details",
